@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Dream Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('buyer2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 600px;
+    }
+    h1{
+      color: white;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(50px);
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 80%;
+    }
+
+    .search-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-form input[type="text"], .search-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-form button {
+      background-color: #ff6347;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-form button:hover {
+      background-color: #f00;
+    }
+
+    .apartment-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .apartment {
+      width: 30%;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgb(234, 232, 232);
+      border-radius: 5px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .apartment h3 {
+      margin-bottom: 10px;
+    }
+
+    .apartment p {
+      margin-bottom: 10px;
+    }
+
+    .apartment img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Find Your Dream Home</h1>
+    <form class="search-form">
+      <input type="text" placeholder="Enter location" required>
+      <select name="apartment-type" id="apartment-type" required>
+        <option value="">Select apartment type</option>
+        <option value="1-bedroom">1 Bhk</option>
+        <option value="2-bedroom">2 Bhk</option>
+        <option value="3-bedroom">3 Bhk</option>
+      </select>
+      <input type="number" placeholder="Enter budget" required>
+      <button type="submit">Search</button>
+    </form>
+    <div class="apartment-list" id="apartment-list">
+      
+      <div class="apartment">
+        <img src="appartment.jpg" alt="Apartment">
+        <h3>Apartment in Luckhnow</h3>
+        <p>Type: 1 Bhk</p>
+        <p>Price: 15000 rupee/month</p>
+      </div>
+     
+      <div class="apartment">
+        <img src="appartment.jpg" alt="Apartment">
+        <h3>Apartment in Mumbai</h3>
+        <p>Type: 1 Bhk</p>
+        <p>Price: 70000 rupee/month</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+   
+const apartmentsData = [
+  { location: "Luckhnow", type: "1 Bhk", price: 15000 },
+  { location: "Mumbai", type: "1 Bhk", price: 70000 },
+ 
+];
+
+function searchApartments(location, apartmentType, budget) {
+ 
+  const filteredApartments = apartmentsData.filter(apartment =>
+    apartment.location.toLowerCase() === location.toLowerCase() &&
+    apartment.type.toLowerCase() === apartmentType.toLowerCase() &&
+    apartment.price <= budget
+  );
+
+  
+  displayApartments(filteredApartments);
+}
+
+
+function displayApartments(apartments) {
+  const apartmentList = document.getElementById("apartment-list");
+  apartmentList.innerHTML = "";
+
+  apartments.forEach(apartment => {
+  
+    const apartmentElement = document.createElement("div");
+    apartmentElement.classList.add("apartment");
+
+    apartmentElement.innerHTML = `
+      <img src="appartment.jpg" alt="Apartment">
+      <h3>Apartment in ${apartment.location}</h3>
+      <p>Type: ${apartment.type}</p>
+      <p>Price: ${apartment.price} rupee/month</p>
+    `;
+
+  
+    apartmentList.appendChild(apartmentElement);
+  });
+}
+
+
+document.getElementById("search-form").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const location = document.getElementById("location").value;
+  const apartmentType = document.getElementById("apartment-type").value;
+  const budget = parseInt(document.getElementById("budget").value);
+
+  searchApartments(location, apartmentType, budget);
+});
+  </script>
+</body>
+</html>

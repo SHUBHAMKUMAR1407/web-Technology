@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Rows to Table</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 50%;
+			margin: 20px auto;
+		}
+		th, td {
+			border: 1px solid #dddddd;
+			padding: 8px;
+			text-align: left;
+		}
+		th {
+			background-color: #f2f2f2;
+		}
+		button {
+			display: block;
+			margin: 20px auto;
+		}
+	</style>
+</head>
+<body>
+	<table id="myTable">
+		<tr>
+			<th>NUM</th>
+			<th>Sum</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+	</table>
+	<button onclick="addRow()">Add</button>
+	<script>
+		function addRow() {
+			var table = document.getElementById("myTable");
+			var rows = table.getElementsByTagName("tr");
+			var lastRow = rows[rows.length - 1];
+			var prevRow = lastRow.previousElementSibling;
+			var sum = parseInt(lastRow.lastElementChild.innerText) + parseInt(prevRow.lastElementChild.innerText);
+			var newRow = table.insertRow(-1);
+			var cell1 = newRow.insertCell(0);
+			var cell2 = newRow.insertCell(1);
+			cell1.innerText = parseInt(lastRow.firstElementChild.innerText) + 1;
+			cell2.innerText = sum;
+		}
+	</script>
+</body>
+</html>

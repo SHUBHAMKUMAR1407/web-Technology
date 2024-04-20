@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('sign_up.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            
+        }
+        
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+           
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .signup-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .signup-container h2 {
+            color: #ff6347;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .or{
+            color: #ff6347;
+        }
+        
+        .signup-container input[type="text"],
+        .signup-container input[type="email"],
+        .signup-container input[type="password"] {
+           
+            width: 80%;
+      border-radius: 16px;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+        }
+        
+        .signup-container button {
+            background-color: #ff6347;
+            color: #fff;
+            font-size: 18px;
+            width: 80%;
+      border-radius: 16px;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .signup-container button:hover {
+            background-color: #f00;
+        }
+
+        #myInput{
+            width: 80%;
+            margin-left: 32px
+        }
+        
+        .social-signup {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: medium;
+            color: #ff6347;
+        }
+        
+        .social-signup img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-container">
+            <h2>Sign Up With</h2>
+            <div class="social-signup">
+                <img src="gogle.png" alt="Google Logo">
+        
+                <img src="facebook.png" alt="Facebook Logo">
+            </div>
+           <p class="or">OR</p> 
+            <form action="#">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" value="password" id="myInput" placeholder="password">
+                <input type="checkbox" onclick="myFunction()">
+                <button type="submit" onclick="Redirect();">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function Redirect(){
+    location.href = " project.html";
+}
+
+    </script>
+</body>
+</html>

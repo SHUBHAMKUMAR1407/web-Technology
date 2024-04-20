@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('seller.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 600px;
+    }
+
+    .dashboard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 50px;
+      border-radius: 10px;
+      width: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .seller-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .seller-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .seller-details {
+      flex: 1;
+      margin-left: 30px;
+    }
+
+    .seller-details h3 {
+      margin-bottom: 10px;
+    }
+
+    .seller-details p {
+      margin-bottom: 10px;
+    }
+
+    .submit-property-form {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .submit-property-form input[type="text"], 
+    .submit-property-form input[type="number"], 
+    .submit-property-form textarea,
+    .submit-property-form select {
+      width: calc(100% - 22px); /* Adjusting width for padding and border */
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .submit-property-form button {
+      background-color: #ff6347;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-property-form button:hover {
+      background-color: #f00;
+    }
+
+    .property-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .property-table th, .property-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .property-table th {
+      background-color: #ff6347;
+      color: #fff;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="seller-info">
+      <img src="profilepic.jpg" alt="Seller" class="seller-photo">
+      <div class="seller-details">
+        <h3>Harsh Rajvardhan</h3>
+        <p>Lulu mall,Luckhnow </p>
+      </div>
+    </div>
+    <form class="submit-property-form"  id="propertyForm">
+      <h2>Submit Your Property</h2>
+      <input type="text" placeholder="Your Property Location" required>
+      <!-- <input type="text" placeholder="Apartment Type" required> -->
+      <select name="apartment-type" id="Apartment Type" required>
+        <option value="">Select apartment type</option>
+        <option value="1Bhk">1 Bhk</option>
+        <option value="2Bhk">2 Bhk</option>
+        <option value="3Bhk">3 Bhk</option>
+      </select>
+      <input type="number" placeholder="Estimated Price of Your Property" required>
+      <input type="file" accept="image/*" required>
+      <button type="submit">Submit</button>
+    </form>
+    <h2>Submitted Properties</h2>
+    <table class="property-table"  id="propertyTable">
+    
+    </table>
+  </div>
+
+  
+  <script>
+    // JavaScript code
+    document.addEventListener('DOMContentLoaded', function () {
+      var propertyForm = document.getElementById('propertyForm');
+      var propertyTable = document.getElementById('propertyTable');
+
+      // Create table header
+      var headerRow = propertyTable.insertRow();
+      var headerCells = ['Serial No', 'Apartment Address', 'Price', 'Apartment Type'];
+
+      headerCells.forEach(function(cellText) {
+        var headerCell = document.createElement('th');
+        headerCell.textContent = cellText;
+        headerRow.appendChild(headerCell);
+      });
+
+      propertyForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var propertyLocationInput = propertyForm.querySelector('input[type="text"][placeholder="Your Property Location"]');
+        var apartmentTypeInput = propertyForm.querySelector('select[name="apartment-type"][id="Apartment Type"]');
+        var propertyPriceInput = propertyForm.querySelector('input[type="number"][placeholder="Estimated Price of Your Property"]');
+
+        // Check if inputs are found
+        if (propertyLocationInput && apartmentTypeInput && propertyPriceInput) {
+          var propertyLocation = propertyLocationInput.value;
+          var apartmentType = apartmentTypeInput.value;
+          var propertyPrice = propertyPriceInput.value;
+
+          // Create data row
+          var newRow = propertyTable.insertRow();
+          var serialNoCell = newRow.insertCell(0);
+          var addressCell = newRow.insertCell(1);
+          var priceCell = newRow.insertCell(2);
+          var typeCell = newRow.insertCell(3);
+
+          // Set cell values
+          serialNoCell.textContent = propertyTable.rows.length - 2; // Adjusted for header row
+          addressCell.textContent = propertyLocation;
+          priceCell.textContent = propertyPrice;
+          typeCell.textContent = apartmentType;
+
+          // Clear form fields
+          propertyForm.reset();
+        } else {
+          console.error('Could not find input fields');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

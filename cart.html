@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff6347;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .property-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .property-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: calc(50% - 10px);
+            height: 500px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .property-box:last-child {
+            margin-right: 0;
+        }
+
+        .property-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            height: 300px;
+        }
+
+        .property-info {
+            font-size: 14px;
+            color: #555;
+            position: relative;
+        }
+
+        .property-type {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .property-price {
+            margin-bottom: 5px;
+        }
+
+        .property-location {
+            margin-bottom: 5px;
+        }
+
+        .property-rating {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rating-star {
+            color: #ffd700;
+            margin-right: 5px;
+        }
+
+        .remove-button {
+            position: absolute;
+            bottom: 10px; 
+            right: 10px; 
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-button:hover {
+            background-color: #d63326;
+        }
+
+        .compare-button {
+            background-color: #0a0a0a;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .compare-button:hover {
+            background-color: #d63326;
+        }
+
+        .buy{
+          padding: 10px;
+          background-color:#ff6347;
+            color: #fff;
+            font-size: 12px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          border-radius: 4px;
+          border: none;
+        }
+        .buy:hover{
+          background-color: #d63326;
+        }
+    </style>
+</head>
+<body>
+   <h1>Hurry! your dream house is waiting for you.</h1>
+   <div class="property-grid">
+    
+    <div class="property-box">
+      <img class="property-image" src="appartment.jpg" alt="Property 1">
+      <div class="property-info">
+        <div class="property-type">House</div>
+        <div class="property-price">600,000 Rupee</div>
+        <div class="property-location">New-Delhi</div>
+        <div class="property-rating">
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9734;</span>
+        </div>
+        <button class="remove-button">Remove</button> 
+        <button class = "buy">BUY</button>
+      </div>
+    </div>
+
+    <div class="property-box">
+      <img class="property-image" src="appartment.jpg" alt="Property 2">
+      <div class="property-info">
+        <div class="property-type">House</div>
+        <div class="property-price">900,000 Rupee</div>
+        <div class="property-location">Mumbai</div>
+        <div class="property-rating">
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9733;</span>
+          <span class="rating-star">&#9734;</span>
+          <span class="rating-star">&#9734;</span>
+        </div>
+        <button class="remove-button">Remove</button> 
+        <button class = "buy">BUY</button>
+      </div>
+    </div>
+
+   </div>
+
+   <a href="compare.html" class="compare-button">compare</a>
+
+   <script>
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('remove-button')) {
+                const propertyBox = e.target.closest('.property-box');
+                if (propertyBox) {
+                    propertyBox.remove();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

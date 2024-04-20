@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Website</title>
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+<div class="home-page">
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="about.html">About</a>
+    <a href="property.html">Property</a>
+    <div class="dropdown">
+      <a href="#">Agents</a>
+      <div class="dropdown-content">
+        <a href="#"><input type="checkbox" id="lucknow">Lucknow</a>
+        <a href="#"><input type="checkbox" id="patna">Patna</a>
+        <a href="#"><input type="checkbox" id="delhi">New Delhi</a>
+        <a href="#"><input type="checkbox" id="hyderabad">Hyderabad</a>
+        <a href="#"><input type="checkbox" id="bangalore">Bangalore</a>
+        <a href="#"><input type="checkbox" id="mumbai">Mumbai</a>
+        <button id="findHereBtn">Find Here</button> <!-- Added an ID to the button -->
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a href="login_page.html">Login</a>
+    <a href="cart.html">Cart</a>
+    <a href="seller-portal.html" class="seller-portal">Seller Portal</a>
+  </nav>
+  <div class="container">
+    <h1>Welcome To Our Real Estate Website</h1>
+    <p>Find your dream property with us. We offer the best properties for you. Contact us now!</p>
+    <a href="buyer portal.html" class="find-dream-home-btn">Find Your Dream Home</a>
+  </div>
+</div>
+<div class="property">
+  <h3>OUR PROPERTIES</h3>
+  <p>Featured Properties</p>
+  <div class="property-images">
+    <div class="property-image">
+      <img src="appartment.jpg" alt="Property 1">
+      <div class="property-details">
+        <h4>Appartment 01</h4>
+        <p>Price: 500,000 Rupee</p>
+        <p>Location: Lucknow</p>
+      </div>
+    </div>
+    <div class="property-image">
+      <img src="appartment.jpg" alt="Property 2">
+      <div class="property-details">
+        <h4>Appartment 02</h4>
+        <p>Price: 600,000 Rupee</p>
+        <p>Location: New Delhi</p>
+      </div>
+    </div>
+    <div class="property-image">
+      <img src="appartment.jpg" alt="Property 3">
+      <div class="property-details">
+        <h4>Appartment 03</h4>
+        <p>Price: 450,000 Rupee</p>
+        <p>Location: Patna</p>
+      </div>
+    </div>
+    <div class="property-image">
+      <img src="appartment.jpg" alt="Property 4">
+      <div class="property-details">
+        <h4>Appartment 04</h4>
+        <p>Price: 700,000 Rupee</p>
+        <p>Location: Mumbai</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="agents">
+  <h2>Our Agents</h2>
+  <div class="agent-container">
+    <div class="agent">
+      <img src="gent.jpeg" alt="Agent 1">
+      <h3>Nivil</h3>
+      <p>Lucknow</p>
+    </div>
+    <div class="agent">
+      <img src="gent.jpeg" alt="Agent 2">
+      <h3>Roman</h3>
+      <p>Patna</p>
+    </div>
+    <div class="agent">
+      <img src="wgent.jpeg" alt="Agent 3">
+      <h3>Sneha</h3>
+      <p>New Delhi</p>
+    </div>
+    <div class="agent">
+      <img src="gent.jpeg" alt="Agent 4">
+      <h3>John</h3>
+      <p>Hyderabad</p>
+    </div>
+    <div class="agent">
+      <img src="wgent.jpeg" alt="Agent 5">
+      <h3>Rubina</h3>
+      <p>Bangalore</p>
+    </div>
+    <div class="agent">
+      <img src="wgent.jpeg" alt="Agent 6">
+      <h3>Afia</h3>
+      <p>Mumbai</p>
+    </div>
+  </div>
+</div>
+<div class="About">
+  <div class="about-image">
+    <img src="abuut.jpg" alt="About Us">
+  </div>
+  <div class="about-content">
+    <h1>About us</h1>
+    <p>
+      We believe that finding the perfect property is more than just a transaction. It's about building a relationship and understanding your unique needs. Our team of experienced and knowledgeable real estate agents are dedicated to helping you find the property of your dreams, whether it's a cozy apartment or a spacious family home. With years of experience in the industry, we have the expertise and resources to guide you through every step of the buying or selling process. Let us help you turn your real estate goals into a reality.
+    </p>
+    <img src="about.jpg" alt="Agent Profile">
+  </div>
+</div>
+
+<div class="contact">
+  <div class="contact-content">
+    <h1>Contact Us</h1>
+    <p>We're open for any suggestion or just to have a chat</p>
+    <p>Address: RGIPT, Jais, Raebareli<br>Email: shivrealstate@gmail.com</p>
+    <form id="contact-form" action="#" method="post">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="address">Address:</label><br>
+      <input type="text" id="address" name="address" required><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+      <input type="submit" value="Send Message">
+    </form>
+  </div>
+  <div class="contact-image">
+    <img src="contact us.jpg" alt="Contact Us">
+  </div>
+</div>
+
+<br><br><br>
+<footer>
+  <p>&copy; 2024 Real Estate Website. All rights reserved.</p>
+</footer>
+
+<script>
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    
+    alert('Message sent successfully!');
+    contactForm.reset();
+  });
+
+  document.getElementById('findHereBtn').addEventListener('click', function() {
+    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
+    const selectedLocations = [];
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        selectedLocations.push(checkbox.id);
+      }
+    });
+    if (selectedLocations.length > 0) {
+      localStorage.setItem('selectedLocations', JSON.stringify(selectedLocations));
+      window.location.href = 'agent.html';
+    } else {
+      alert('Please select at least one location.');
+    }
+  });
+</script>
+</body>
+</html>

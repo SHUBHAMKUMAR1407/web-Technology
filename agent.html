@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Page</title>
+    <link rel="stylesheet" href="project.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+       
+        .agent-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+
+.house-design {
+    flex: 1;
+    max-width: 60%;
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+        .house-design img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .agent-info {
+    flex: 1;
+    max-width: 35%;
+    margin-left: 20px;
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+        .agent-info h2 {
+            color: #ff6347;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+
+        .agents {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border-top: 2px solid #ff6347;
+        }
+
+        .agent-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .agent {
+            flex: 1;
+            max-width: 25%;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ff6347;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .agent img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9; 
+}
+
+        .agent h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .agent p {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .contact-info span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+       
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="agent-page">
+        <div class="house-design">
+            <img src="agents.back.jpg" alt="House Design">
+        </div>
+        <div class="agent-info">
+            <h2>Why Agents Are Important</h2>
+            <p>Agents play a crucial role in the real estate industry. They provide valuable expertise, guidance, and negotiation skills, helping buyers navigate through the complex process of purchasing a property. With their in-depth knowledge of the local market and industry trends, agents can help buyers find the perfect property that meets their needs and budget. Additionally, agents handle the paperwork, coordinate inspections, and ensure a smooth transaction from start to finish.</p>
+        </div>
+    </div>
+
+    <div class="agents">
+        <h2>Our Agents</h2>
+        <div class="agent-container">
+            <div class="agent">
+                <img src="gent.jpeg" alt="Agent 1">
+                <h3>Nivil</h3>
+                <p>Lucknow</p>
+                <div class="contact-info">
+                    <img src="phone_icon.png" alt="Phone">
+                    <span>Phone:</span>
+                    <span>+91 1234567890</span>
+                </div>
+                <div class="contact-info">
+                    <img src="email_icon.png" alt="Email">
+                    <span>Email:</span>
+                    <span>nivil@example.com</span>
+                </div>
+            </div>
+            <div class="agent">
+                <img src="gent.jpeg" alt="Agent 2">
+                <h3>Roman</h3>
+                <p>Patna</p>
+                <div class="contact-info">
+                    <img src="phone_icon.png" alt="Phone">
+                    <span>Phone:</span>
+                    <span>+91 9876543210</span>
+                </div>
+                <div class="contact-info">
+                    <img src="email_icon.png" alt="Email">
+                    <span>Email:</span>
+                    <span>roman@example.com</span>
+                </div>
+            </div>
+            <div class="agent">
+                <img src="wgent.jpeg" alt="Agent 3">
+                <h3>Sneha</h3>
+                <p>New Delhi</p>
+                <div class="contact-info">
+                    <img src="phone_icon.png" alt="Phone">
+                    <span>Phone:</span>
+                    <span>+91 2345678901</span>
+                </div>
+                <div class="contact-info">
+                    <img src="email_icon.png" alt="Email">
+                    <span>Email:</span>
+                    <span>sneha@example.com</span>
+                </div>
+            </div>
+            <div class="agent">
+                <img src="gent.jpeg" alt="Agent 4">
+                <h3>John</h3>
+                <p>Hyderabad</p>
+                <div class="contact-info">
+                    <img src="phone_icon.png" alt="Phone">
+                    <span>Phone:</span>
+                    <span>+91 8765432109</span>
+                </div>
+                <div class="contact-info">
+                    <img src="email_icon.png" alt="Email">
+                    <span>Email:</span>
+                    <span>john@example.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Real Estate Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const agentAddress = localStorage.getItem('agentAddress');
+            const agents = document.querySelectorAll('.agent p');
+            agents.forEach(agent => {
+                agent.textContent = agentAddress;
+            });
+        };
+    </script>
+</body>
+</html>

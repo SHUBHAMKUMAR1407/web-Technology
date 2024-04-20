@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff6347;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            background-color: #ff6347;
+            color: #f2f2f2;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .property-image {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .comparison-table {
+            margin-top: 30px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparison Page</h1>
+    <p> Now it's easy to select your dream home.</p>
+    <div class="image-container">
+        <div>
+            <img class="property-image" src="appartment.jpg" alt="Property 1">
+            <h3>Appartment 01</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>House</th>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>600,000 Rupee</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>New-Delhi</td>
+                </tr>
+                <tr>
+                    <td>Apartment Type</td>
+                    <td>2BHK</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>
+                        <div class="property-rating">
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9734;</span>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agent's Name</td>
+                    <td>Sneha</td>
+                </tr>
+                <tr>
+                    <td>Nearby Locations</td>
+                    <td>School (1 km), Hospital (2 km), Market (3 km), Club (0.5 km), Office (1 km)</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <img class="property-image" src="appartment.jpg" alt="Property 2">
+            <h3>Appartment 02</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>House</th>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>900,000 Rupee</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Mumbai</td>
+                </tr>
+                <tr>
+                    <td>Apartment Type</td>
+                    <td>2 BHK</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td> <div class="property-rating">
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9733;</span>
+                        <span class="rating-star">&#9734;</span>
+                        <span class="rating-star">&#9734;</span>
+                      </div></td>
+                </tr>
+                <tr>
+                    <td>Agent's Name</td>
+                    <td>Sneha</td>
+                </tr>
+                <tr>
+                    <td>Nearby Locations</td>
+                    <td>School (0.5 km), Hospital (1.5 km), Market (2 km), Club (3.5 km), Office (1.5 km)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

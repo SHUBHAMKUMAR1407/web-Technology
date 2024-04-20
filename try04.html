@@ -1,0 +1,61 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Real Estate Website</title> <style> body { margin: 0; font-family: Arial, sans-serif; background-image: url('login.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 500px; }
+  Edit
+  Full Screen
+  Copy code
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+  }
+  
+  .login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .login-container h2 {
+    color: #ff6347;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 80%;
+    border-radius: 16px;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .login-container button {
+    background-color: #ff6347;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-container button:hover {
+    background-color: #f00;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  </style> </head> <body> <div class="login-container"> <h2>Login</h2> <form action="#" id="loginForm"> <input type="text" placeholder="Username"> <input type="password" placeholder="Password"> <button type="submit">Login</button> </form> <div class="signup-link"> Don't have an account? <a href="signup.html">Sign up</a> </div> </div> <script> document.getElementById("loginForm").addEventListener("submit", function(event) { event.preventDefault(); window.location.href = "project.html"; }); </script> </body> </html>
